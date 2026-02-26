@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stats For Spotify - Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/main.css">
+
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="brand">
+            <a href="/">Statify+</a>
+        </div>
+        <div class="nav-links">
+            <a href="/" class="nav-link">Home</a>
+            <a href="/top-tracks" class="nav-link active">Top Tracks</a>
+            <a href="/top-artists" class="nav-link">Top Artists</a>
+        </div>
+        <div class="profile-container">
+            <button class="profile-btn" onclick="toggleDropdown()">
+                {% if user.profile_image %}
+                <img src="{{ user.profile_image }}" alt="{{ user.display_name }}">
+                {% endif %}
+                <span>{{ user.display_name }}</span>
+            </button>
+            <div class="dropdown" id="dropdown">
+                <div onclick="window.location.href='/logout'">
+                    <img src="/static/icons/logout-icon.svg" alt="Logout">
+                    <span>Logout</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+
+    <!-- Main Content -->
+    <main>
+        <section class="hero">
+            <h1>Welcome to Statify+</h1>
+            <p>Explore your most-streamed songs, artists, and more.</p>
+        </section>
+
+        <section class="stats">
+            <h2>Your Top Stats</h2>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <h3>Top Tracks</h3>
+                    <ul>
+                        {% for track in top_tracks %}
+                        <li onclick="window.open('{{ track.url }}', '_blank')">
+                            <img src="{{ track.image }}" alt="{{ track.name }}"
+                                style="width: 50px; height: 50px; vertical-align: middle; border-radius: 5px;">
+                            {{ track.name }}
+                            </a>
+                        </li>
+                        {% else %}
+                        <li>No data available</li>
+                        {% endfor %}
+                        <a href="/top-tracks" class="more-link">For More</a>
+                    </ul>
+                </div>
+                <div class="stat-item">
+                    <h3>Top Artists</h3>
+                    <ul>
+                        {% for artist in top_artists %}
+                        <li onclick="window.open('{{ artist.url }}', '_blank')">
+                            <img src="{{ artist.image }}" alt="{{ artist.name }}"
+                                style="width: 50px; height: 50px; vertical-align: middle; border-radius: 5px;">
+                            {{ artist.name }}
+                            </a>
+                        </li>
+                        {% else %}
+                        <li>No data available</li>
+                        {% endfor %}
+                        <a href="/top-artists" class="more-link">For More</a>
+                    </ul>
+                </div>
+            </div>
+        </section>
+       
+        <section class="playlist-grid">
+            <h2 class="playlist-title">Best Songs Of 2024</h2>
+            <div id="track-grid" class="grid-container"></div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Stats For Spotify. All rights reserved.</p>
+    </footer>
+</body>
+<script src="/static/main.js"></script>
+</html>

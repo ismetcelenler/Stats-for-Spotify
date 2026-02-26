@@ -1,0 +1,214 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fcfffc; /* Paletten açık renk arka plan */
+    overflow-x: hidden;
+}
+
+/* Navbar styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #248232; /* Ana koyu yeşil */
+    color: white;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .brand {
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    color: #fcfffc; /* Açık beyaz renk */
+}
+
+.navbar .nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .nav-links a {
+    text-decoration: none;
+    color: #fcfffc; /* Beyaz renk */
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+
+.navbar .nav-links a:hover {
+    color: #fcfffc; /* Daha canlı yeşil */
+}
+
+.navbar .profile {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.navbar .profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 2px solid #fcfffc; /* Profil resmi için beyaz çerçeve */
+}
+
+.navbar .profile .dropdown {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background: #fcfffc; /* Açık beyaz */
+    color: #040f0f; /* Çok koyu gri/siyah */
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+    flex-direction: column;
+    padding: 10px;
+    width: 140px;
+}
+
+.navbar .profile .dropdown a {
+    text-decoration: none;
+    color: #040f0f; /* Koyu gri */
+    padding: 5px 10px;
+    border-radius: 3px;
+    transition: background 0.2s ease;
+}
+
+.navbar .profile .dropdown a:hover {
+    background-color: #2ba84a; /* Daha canlı yeşil */
+    color: #fcfffc; /* Beyaz */
+}
+
+.navbar .profile:hover .dropdown {
+    display: flex;
+}
+
+.navbar .login-btn {
+    text-decoration: none;
+    color: #fcfffc; /* Beyaz */
+    background-color: #2ba84a; /* Canlı yeşil */
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: background 0.2s ease;
+}
+
+.navbar .login-btn:hover {
+    background-color: #248232; /* Daha koyu yeşil */
+}
+
+/* Genel Stil Ayarları */
+a {
+    text-decoration: none;
+    color: #248232; /* Ana yeşil */
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #fcfffc;
+}
+
+/* Scrollbar Tasarımı */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2BA84A;
+    border-radius: 5px;
+    border: 3px solid transparent;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #248232;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: #2D3A3A;
+}
+
+/*Playlist*/
+.playlist-grid {
+    text-align: center;
+    margin: 40px auto;
+}
+
+.playlist-container {
+    overflow: hidden;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.grid-container {
+    display: flex;
+    flex-wrap: nowrap; /* Kartların tek satırda yerleşmesini sağlar */
+    overflow-x: hidden; /* Yatay sürükleme imlecini kaldırmak için */
+    overflow-y: hidden; /* Dikey sürükleme imlecini kaldırmak için */
+    gap: 15px; /* Kartlar arasındaki boşluk */
+    justify-content: flex-start; /* Kartları sola hizalamak için */
+    padding: 10px; /* Kenarlardan biraz boşluk bırakmak için */
+    width: 100%; /* Konteynerin genişliğini ayarlamak için */
+    margin: 0 auto; /* Ortalamak için */
+    position: relative; /* Konteyneri sabit tutmak için */
+}
+
+.track-card {
+    background-color: #fcfffc;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px; /* Kart içindeki boşluk */
+    width: 220px; /* Kart genişliğini sabit yaptık */
+    height: auto; /* Kartların yüksekliğini içeriğe göre ayarlanmasını sağlar */
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    flex: 0 0 220px; /* Kart genişliğini sabitledik */
+}
+
+.track-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.track-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+}
+
+.random-track-btn {
+    background-color: #248232; /* Canlı yeşil */
+    color: #fcfffc; /* Beyaz */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    margin-top: 20px;
+}
+
+.random-track-btn:hover {
+    background-color: #248232; /* Daha koyu yeşil */
+}
+
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #040f0f; /* Paletten koyu gri */
+    color: #fcfffc; /* Beyaz */
+    margin-top: 40px;
+    font-size: 0.9em;
+}

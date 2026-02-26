@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Not Found</title>
+    <link rel="stylesheet" href="/static/callback.css">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="brand">Statify</div>
+        <div class="nav-links">
+            <a href="/" class="nav-link">Home</a>
+            <a href="/top-tracks" class="nav-link active">Top Tracks</a>
+            <a href="/top-artists" class="nav-link">Top Artists</a>
+        </div>
+        {% if user %}
+        <div class="profile-container">
+            <button class="profile-btn" onclick="toggleDropdown()">
+                {% if user.profile_image %}
+                <img src="{{ user.profile_image }}" alt="{{ user.display_name }}">
+                {% endif %}
+                <span>{{ user.display_name }}</span>
+            </button>
+            <div class="dropdown" id="dropdown">
+                <div onclick="window.location.href='/logout'">
+                    <img src="/static/icons/logout-icon.svg" alt="Logout">
+                    <span>Logout</span>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        {% if success %}
+        <section class="hero">
+            <h1>Login Successful!</h1>
+            <p>You have successfully logged in with Spotify.</p>
+            <p>Your access token has been saved to your session.</p>
+            <p>You will be redirected to the homepage in 15 seconds.</p>
+            <a href="/">Go to Homepage</a>
+        </section>
+        {% else %}
+        <section class="hero" style="background-color: #2d3a3a;">
+            <h1>404</h1>
+            <p>Sorry, the page you are looking for could not be found.</p>
+            <p>You may have mistyped the URL or the page has been removed.</p>
+            <a href="/">Go Back to Home</a>
+        </section>
+        {% endif %}
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Stats For Spotify. Tüm hakları saklıdır.</p>
+    </footer>
+        <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Backend tarafından success değeri true/false olarak gönderiliyor
+            var success = { success };
+            if (success) {
+                setTimeout(function () {
+                    window.location.href = '/';
+                }, 15000);
+            }
+        });
+    </script>
+    <script src="/static/main.js"></script>
+</body>
+
+</html>

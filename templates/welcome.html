@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stats For Spotify - Home</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FCFFFC;
+            /* Çok açık beyaz */
+            color: #040F0F;
+            /* Çok koyu yeşil */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        main {
+            flex: 1;
+            /* İçeriği büyüyen alan yapar, footer'ı aşağı iter */
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: #040F0F;
+            color: #FCFFFC;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .brand {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 24px;
+            font-weight: bold;
+            color: #2BA84A;
+        }
+
+        .brand a {
+            text-decoration: none; /* Alt çizgiyi kaldır */
+            color: #248232;
+            font-size: 24px;
+            font-weight: bold;
+            transition: color 0.3s ease; /* Renk geçiş efekti */
+        }
+
+        .brand a:hover {
+            color: #2BA84A;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #FCFFFC;
+            font-size: 18px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #FCFFFC;
+            background-color: #248232;
+        }
+
+        .navbar .login-btn {
+            color: #FCFFFC;
+            background-color: #2BA84A;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .navbar .login-btn:hover {
+            color: #2BA84A;
+            background-color: #FCFFFC;
+            transform: scale(1.1);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #248232;
+            color: #FCFFFC;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        .cta-btn {
+            margin-top: 40px;
+            padding: 12px 30px;
+            background-color: #2BA84A;
+            color: #FCFFFC;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background-color: #FCFFFC;
+            color: #248232;
+            border: 2px solid #248232;
+        }
+
+        .stats {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #2D3A3A;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            color: #FCFFFC;
+        }
+
+        .stats h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #248232;
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            margin: 20px;
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .stat-item h3 {
+            font-size: 1.8rem;
+            color: #2BA84A;
+        }
+
+        .stat-item ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .stat-item ul li {
+            background-color: #040F0F;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease;
+            color: #FCFFFC;
+            cursor: pointer;
+        }
+
+        .stat-item ul li:hover {
+            background-color: #248232;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #040F0F;
+            font-size: 0.9rem;
+            color: #FCFFFC;
+        }
+
+        footer a {
+            color: #248232;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #2BA84A;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="brand">
+            <a href="/">Statify+</a>
+        </div>
+        <div class="nav-links">
+            <a href="/" class="nav-link">Home</a>
+            <a href="/top-tracks" class="nav-link active">Top Tracks</a>
+            <a href="/top-artists" class="nav-link">Top Artists</a>
+        </div>
+        <div class="profile">
+            <a href="/login" class="login-btn">Login</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <section class="hero">
+            <h1>Welcome to Statify+</h1>
+            <p>Explore your most-streamed songs, artists, and more.</p>
+            <br>
+            <a href="/login" class="cta-btn">Get Started</a>
+        </section>
+
+        <section class="stats">
+            <h2>Your Top Stats</h2>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <h3>Top Tracks</h3>
+                    <ul>
+                        <li onclick="window.location.href='/login'">Please login</li>
+                    </ul>
+                </div>
+                <div class="stat-item">
+                    <h3>Top Artists</h3>
+                    <ul>
+                        <li onclick="window.location.href='/login'">Please login</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Stats For Spotify. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

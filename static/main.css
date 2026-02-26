@@ -1,0 +1,291 @@
+/* Genel Ayarlar */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FCFFFC; /* Çok açık beyaz */
+    color: #040F0F; /* Çok koyu yeşil */
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #040F0F; /* Çok koyu yeşil */
+    color: #FCFFFC; /* Çok açık beyaz */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2BA84A; /* Orta yeşil */
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #FCFFFC; /* Çok açık beyaz */
+    font-size: 18px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #FCFFFC;
+    background-color: #248232; /* Canlı yeşil */
+}
+
+/* Profil Butonu */
+.profile-container {
+    position: relative;
+}
+
+.profile-btn {
+    background: #2D3A3A; /* Koyu gri-yeşil */
+    border: 2px solid #248232; /* Canlı yeşil çerçeve */
+    color: #FCFFFC; /* Çok açık beyaz */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    padding: 5px 15px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.profile-btn img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.profile-btn:hover {
+    background-color: #248232; /* Canlı yeşil */
+    color: #FCFFFC; /* Beyaz */
+}
+
+/* Dropdown Menü */
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: #FCFFFC; /* Beyaz */
+    color: #040F0F; /* Çok koyu yeşil */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 1000;
+    width: 200px;
+}
+
+.dropdown.active {
+    display: block;
+}
+
+.dropdown div {
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.dropdown div:hover {
+    background-color: #F1F1F1;
+}
+
+.dropdown img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+/* Hero Bölümü */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #248232; /* Canlı yeşil */
+    color: #FCFFFC; /* Çok açık beyaz */
+}
+
+.hero h1 {
+    font-size: 3rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.cta-btn {
+    margin-top: 20px;
+    padding: 12px 30px;
+    background-color: #2BA84A; /* Orta yeşil */
+    color: #FCFFFC; /* Çok açık beyaz */
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #248232; /* Canlı yeşil */
+}
+
+/* İstatistikler Bölümü */
+.stats {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #2D3A3A; /* Koyu gri-yeşil */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    color: #FCFFFC; /* Çok açık beyaz */
+}
+
+.stats h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #248232; /* Canlı yeşil */
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    margin: 20px;
+    flex: 1;
+    min-width: 250px;
+}
+
+.stat-item h3 {
+    font-size: 1.8rem;
+    color: #2BA84A; /* Orta yeşil */
+}
+
+.stat-item ul {
+    list-style: none;
+    padding: 0;
+}
+
+.stat-item ul li {
+    background-color: #040F0F; /* Çok koyu yeşil */
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+    color: #FCFFFC; /* Çok açık beyaz */
+}
+
+.stat-item ul li:hover {
+    background-color: #248232; /* Canlı yeşil */
+}
+
+/* Spotify Player */
+#spotify-player-section {
+    margin-top: 40px;
+    text-align: center;
+    background-color: #F9F9F9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#spotify-player-section h2 {
+    font-size: 2rem;
+    color: #121212;
+    margin-bottom: 20px;
+}
+
+#player {
+    height: 80px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    background: #2BA84A; /* Orta yeşil */
+    color: #FCFFFC; /* Beyaz */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+
+/* "For More" Linkleri */
+.more-link {
+    display: inline-block; /* Buton gibi görünmesi için */
+    padding: 10px 20px; /* İç boşluk */
+    background-color: #248232; /* Canlı yeşil */
+    color: #FCFFFC; /* Beyaz */
+    text-decoration: none; /* Alt çizgi kaldırılır */
+    font-size: 1rem; /* Boyut */
+    font-weight: bold; /* Kalın yazı */
+    border-radius: 25px; /* Yuvarlatılmış kenarlar */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.more-link:hover {
+    background-color: #2BA84A; /* Orta yeşil */
+    transform: scale(1.05); /* Hover ile büyütme efekti */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Hafif gölge efekti */
+}
+
+.more-link:active {
+    background-color: #2D3A3A; /* Daha koyu renk, tıklanma efekti */
+    transform: scale(0.98); /* Hafif küçültme efekti */
+}
+
+/* Scrollbar Tasarımı */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2BA84A;
+    border-radius: 5px;
+    border: 3px solid transparent;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #248232;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: #2D3A3A;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #040F0F; /* Çok koyu yeşil */
+    font-size: 0.9rem;
+    color: #FCFFFC; /* Çok açık beyaz */
+}
+
+footer a {
+    color: #248232; /* Canlı yeşil */
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #2BA84A; /* Orta yeşil */
+}
